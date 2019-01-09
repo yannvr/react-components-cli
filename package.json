@@ -1,0 +1,19 @@
+{
+  "name": "react-styled-component-generator",
+  "version": "1.0.0",
+  "description": "React styled template generator with command line and scripts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yannvr/react-templates"
+  },
+  "main": "npx plop",
+  "scripts": {
+    "create:styled-component": "npx plop"
+  },
+  "keywords": ["plop", "template", "generator", "command-line"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "plop": "^2.1.0"
+  }
+}

@@ -1,0 +1,25 @@
+import React from 'react'
+import 'jest-styled-components'
+import renderer from 'react-test-renderer'
+import JssProvider from 'react-jss/lib/JssProvider'
+import {{ name }} from './index'
+
+const generateClassName = (rule, styleSheet) => `${styleSheet.options.classNamePrefix}-${rule.key}`
+
+describe('<{{name}} />', () => {
+  let props
+
+  beforeEach(() => {
+    props = {
+    }
+  })
+
+  it('should render correctly', () => {
+    const tree = renderer.create(
+      <JssProvider generateClassName={generateClassName}>
+        <{{name}} {...props} />
+      </JssProvider>
+    ).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})
