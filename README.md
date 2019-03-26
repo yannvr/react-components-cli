@@ -20,6 +20,6 @@ https://www.dropbox.com/s/y0hnt2jq6nee3y2/react-styled-component-screen-recordin
 
 https://www.dropbox.com/s/y0hnt2jq6nee3y2/react-styled-component-screen-recording.gif&dl=1
 
-![screen recording](https://www.dropbox.com/s/y0hnt2jq6nee3y2/react-styled-component-screen-recording.gif?dl=1)
+![screen recording](https://www.dropbox.com/s/y0hnt2jq6nee3y2/react-styled-component-screen-recording.gif)
 
 Note: the template can generate unstyled component. You'll just have to remove styled component references.
