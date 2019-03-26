@@ -16,6 +16,6 @@ Create components based on the following structure:
 For instance: `npm run create:styled-component avatar src/component/profile pure true true`
 will create a pure component `<Avatar />` in `src/component/profile`. 
 
-![screen recording](https://www.dropbox.com/s/y0hnt2jq6nee3y2/react-styled-component-screen-recording.gif)
+![screen recording](https://www.dropbox.com/s/y0hnt2jq6nee3y2/react-styled-component-screen-recording.gif?dl=1)
 
 Note: the template can generate unstyled component. You'll just have to remove styled component references.
