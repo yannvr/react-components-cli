@@ -1,5 +1,5 @@
 #!/bin/sh
-PLOP="./node_modules/react-styled-component-generator/node_modules/.bin/plop"
-PLOP_FILE="./node_modules/react-styled-component-generator/plopfile.js"
+PLOP_BIN="./node_modules/.bin/plop"
+PLOP_FILE="./node_modules/react-components-cli/plopfile.js"
 
-${PLOP} --plopfile ${PLOP_FILE} "$@"
+${PLOP_BIN} --plopfile ${PLOP_FILE} "$@"
