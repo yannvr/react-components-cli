@@ -26,6 +26,6 @@ You can substitute `yarn` with `npm`
 For instance: `yarn create-component avatar src/component/profile pure true true`
 will create a pure component `<Avatar />` in `src/component/profile` including test and story files. 
 
-![screen recording](http://recordit.co/XMuQeSSrgy)
+![screen recording](http://g.recordit.co/XMuQeSSrgy.gif)
 
 Note: the template can generate unstyled component. You'll just have to remove styled component references.
