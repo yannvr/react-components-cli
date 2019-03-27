@@ -48,6 +48,7 @@ module.exports = function(plop) {
       let actions = []
 
       const targetDir = data['Target directory']
+      console.log('targetDir', targetDir)
 
       switch (data.type) {
         case 'class':

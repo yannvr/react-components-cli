@@ -10,8 +10,18 @@
   "scripts": {
     "create:styled-component": "npx plop"
   },
-  "keywords": ["plop", "template", "generator", "command-line"],
-  "author": "",
+  "bin": {
+    "create-component": "scripts/create-component.sh"
+  },
+  "keywords": [
+    "plop",
+    "template",
+    "generator",
+    "command-line",
+    "react-cli",
+    "styled-component-cli"
+  ],
+  "author": "Yann VR",
   "license": "MIT",
   "dependencies": {
     "plop": "^2.1.0"
