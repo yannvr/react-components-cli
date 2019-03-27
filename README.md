@@ -11,8 +11,13 @@ Create components based on the following structure:
 - `src/components/new-component/story.js` (optional)
 - `src/components/new-component/style.js` (optional)
 
+### Installation
+- `yarn add --dev react-components-cli`
+or
+- `npm -D i react-components-cli`
+
 ### Usage
-You can substitute `yarn` with `npm`
+You can substitute `yarn` with `npm run`
 - Create any components type using prompts: 
     - `yarn create-component`
     - `npm run create-component`
@@ -27,7 +32,6 @@ You can substitute `yarn` with `npm`
 
 - `npx create-component -- --name PureComponent --directory src/components --comptype pure --styled true --story false` will generate a pure component without a story boook
 - `npx create-component avatar src/component/profile pure true true` will create a pure component `<Avatar />` in `src/component/profile` including test and story files
-
 
 ![screen recording](http://g.recordit.co/XMuQeSSrgy.gif)
 
