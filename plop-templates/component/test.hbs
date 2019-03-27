@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer'
 import JssProvider from 'react-jss/lib/JssProvider'
 import {{ name }} from './index'
 
+// Avoids inconsistent class names between snapshots
 const generateClassName = (rule, styleSheet) => `${styleSheet.options.classNamePrefix}-${rule.key}`
 
 describe('<{{name}} />', () => {

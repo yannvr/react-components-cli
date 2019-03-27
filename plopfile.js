@@ -1,10 +1,15 @@
+const path = require('path')
+
 module.exports = function(plop) {
+
+  const cwd = path.resolve('.')
+
   plop.setGenerator('component', {
     prompts: [
       {
         type: 'input',
         name: 'name',
-        message: 'Component name:',
+        message: 'Component name (ie: MyComponent):',
         validate: function(value) {
           if (!value) {
             return 'Please enter a valid component name'
@@ -14,13 +19,13 @@ module.exports = function(plop) {
       },
       {
         type: 'input',
-        name: 'Target directory',
+        name: 'directory',
         message: 'Target directory:',
         default: 'src/components',
       },
       {
         type: 'list',
-        name: 'type',
+        name: 'comptype',
         message: 'What component type is it?',
         choices: [
           { name: 'stateless', value: 'stateless', checked: true },
@@ -47,21 +52,21 @@ module.exports = function(plop) {
     actions: function(data) {
       let actions = []
 
-      const targetDir = data['Target directory']
-      console.log('targetDir', targetDir)
+      const targetDir = data['directory']
+      const baseDir = cwd + '/' + targetDir
 
-      switch (data.type) {
+      switch (data.comptype) {
         case 'class':
           actions.push({
             type: 'add',
-            path: targetDir + '/{{kebabCase name}}/index.jsx',
+            path: baseDir + '/{{kebabCase name}}/index.jsx',
             templateFile: 'plop-templates/component/index.class-component.hbs',
           })
           break
         case 'pure':
           actions.push({
             type: 'add',
-            path: targetDir + '/{{kebabCase name}}/index.jsx',
+            path: baseDir + '/{{kebabCase name}}/index.jsx',
             templateFile: 'plop-templates/component/index.pure-component.hbs',
           })
           break
@@ -69,7 +74,7 @@ module.exports = function(plop) {
         default:
           actions.push({
             type: 'add',
-            path: targetDir + '/{{kebabCase name}}/index.jsx',
+            path: baseDir + '/{{kebabCase name}}/index.jsx',
             templateFile: 'plop-templates/component/index.stateless-component.hbs',
           })
           break
@@ -78,7 +83,7 @@ module.exports = function(plop) {
       if (data.story) {
         actions.push({
           type: 'add',
-          path: targetDir + '/{{kebabCase name}}/story.js',
+          path: baseDir + '/{{kebabCase name}}/story.js',
           templateFile: 'plop-templates/component/story.hbs',
         })
       }
@@ -86,14 +91,14 @@ module.exports = function(plop) {
       if (data.styled) {
         actions.push({
           type: 'add',
-          path: targetDir + '/{{kebabCase name}}/style.js',
+          path: baseDir + '/{{kebabCase name}}/style.js',
           templateFile: 'plop-templates/component/style.hbs',
         })
       }
 
       actions.push({
         type: 'add',
-        path: targetDir + '/{{kebabCase name}}/test.jsx',
+        path: baseDir + '/{{kebabCase name}}/test.jsx',
         templateFile: 'plop-templates/component/test.hbs',
       })
 

@@ -24,6 +24,6 @@
   "author": "Yann VR",
   "license": "MIT",
   "dependencies": {
-    "plop": "^2.1.0"
+    "plop": "^2.3.0"
   }
 }
