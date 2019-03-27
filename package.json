@@ -1,5 +1,5 @@
 {
-  "name": "react-styled-component-generator",
+  "name": "react-component-cli",
   "version": "1.0.0",
   "description": "React styled template generator with command line and scripts",
   "repository": {
