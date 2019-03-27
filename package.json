@@ -4,7 +4,7 @@
   "description": "React styled template generator with command line and scripts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yannvr/react-templates"
+    "url": "https://github.com/yannvr/react-component-cli"
   },
   "main": "npx plop",
   "scripts": {
