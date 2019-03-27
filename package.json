@@ -1,10 +1,10 @@
 {
-  "name": "react-component-cli",
+  "name": "react-components-cli",
   "version": "1.0.0",
   "description": "React styled template generator with command line and scripts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yannvr/react-component-cli"
+    "url": "https://github.com/yannvr/react-components-cli"
   },
   "main": "npx plop",
   "scripts": {
