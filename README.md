@@ -19,21 +19,32 @@ or
 ### Usage
 You can substitute `yarn` with `npm run`
 - Create any components type using prompts: 
-    - `yarn create-component`
     - `npm run create-component`
+    - `yarn run create-component`
 - Create styled components interactively using: 
-    - `yarn create-component`
     - `npm run create-component` 
-- Or without prompt: 
-    - `yarn create-component <ComponentName> <stateless|class|pure> <targetDir> [styled] [story]`
-    - `npm run create-component <ComponentName> <stateless|class|pure> <targetDir> [styled] [story]`
+    - `yarn run create-component`
+- Or without any prompt: 
+    ```
+        npx create-component -- 
+        --name <ComponentName> 
+        --componentType (stateless|class|pure) 
+        --componentCase (camel|kebab)
+        --directory <targetDir> 
+        --story <Boolean>
+        --syled <Boolean>
+    ```
     
 ### Examples
 
-- `npx create-component -- --name PureComponent --directory src/components --comptype pure --styled true --story false` will generate a pure component without a story boook
-- `npx create-component avatar src/component/profile pure true true` will create a pure component `<Avatar />` in `src/component/profile` including test and story files
+- `npx create-component -- --name FunctionComponent  --directory src/components --componentType stateless --styled true --story false --componentCase camel` 
+will create a function component `<FunctionComponent />` in `src/component/profile` including test and story files
 
 ![screen recording](http://g.recordit.co/XMuQeSSrgy.gif)
+
+### TODO
+- Handle typescript
+- Cypress template
 
 Note: the template can generate unstyled component but you'll just have to remove styled component references.
 PR welcome for different handling templates with other conventions/libraries

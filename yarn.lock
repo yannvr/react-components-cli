@@ -1349,7 +1349,7 @@ pinkie@^2.0.0:
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
   integrity sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
 
-plop@^2.1.0:
+plop@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/plop/-/plop-2.3.0.tgz#e9b3ccf9d8fdbce077ee7377b75fcc5f511df562"
   integrity sha512-CfTMYmfeCwlipzVcDWI6edxRwdZx47d8BRL3VSv5g+BB8JcLXaSzATkU0flG/aIVl4cxe1Y0rGkrtPjpDm7ySQ==

@@ -1,4 +1,5 @@
 const path = require('path')
+const { upperFirst, kebabCase, camelCase } = require('lodash')
 
 module.exports = function(plop) {
 
@@ -23,10 +24,11 @@ module.exports = function(plop) {
         message: 'Target directory:',
         default: 'src/components',
       },
+
       {
         type: 'list',
-        name: 'comptype',
-        message: 'What component type is it?',
+        name: 'componentType',
+        message: 'Component type?',
         choices: [
           { name: 'stateless', value: 'stateless', checked: true },
           { name: 'class', value: 'class' },
@@ -47,6 +49,17 @@ module.exports = function(plop) {
         message: 'Create story?',
         default: true,
       },
+
+      {
+        type: 'list',
+        name: 'componentCase',
+        message: 'What component type is it?',
+        choices: [
+          { name: 'camelCase', value: 'camel', checked: true },
+          { name: 'kebabCase', value: 'kebab' },
+        ],
+      },
+
     ],
 
     actions: function(data) {
@@ -55,27 +68,34 @@ module.exports = function(plop) {
       const targetDir = data['directory']
       const baseDir = cwd + '/' + targetDir
 
-      switch (data.comptype) {
+      plop.setHelper('selectedComponentCase', function (text) {
+        if (data.componentCase === 'kebab') {
+          return kebabCase(text)
+        }
+        return upperFirst(camelCase(text))
+      });
+
+      switch (data.componentType) {
         case 'class':
           actions.push({
             type: 'add',
-            path: baseDir + '/{{kebabCase name}}/index.jsx',
-            templateFile: 'plop-templates/component/index.class-component.hbs',
+            path: baseDir + '/{{selectedComponentCase name}}/{{selectedComponentCase name}}.jsx',
+            templateFile: 'plop-templates/component/component.class-component.hbs',
           })
           break
         case 'pure':
           actions.push({
             type: 'add',
-            path: baseDir + '/{{kebabCase name}}/index.jsx',
-            templateFile: 'plop-templates/component/index.pure-component.hbs',
+            path: baseDir + '/{{selectedComponentCase name}}/{{selectedComponentCase name}}.jsx',
+            templateFile: 'plop-templates/component/component.pure-component.hbs',
           })
           break
         case 'stateless':
         default:
           actions.push({
             type: 'add',
-            path: baseDir + '/{{kebabCase name}}/index.jsx',
-            templateFile: 'plop-templates/component/index.stateless-component.hbs',
+            path: baseDir + '/{{selectedComponentCase name}}/{{selectedComponentCase name}}.jsx',
+            templateFile: 'plop-templates/component/component.stateless-component.hbs',
           })
           break
       }
@@ -83,7 +103,7 @@ module.exports = function(plop) {
       if (data.story) {
         actions.push({
           type: 'add',
-          path: baseDir + '/{{kebabCase name}}/story.js',
+          path: baseDir + '/{{selectedComponentCase name}}/story.js',
           templateFile: 'plop-templates/component/story.hbs',
         })
       }
@@ -91,15 +111,21 @@ module.exports = function(plop) {
       if (data.styled) {
         actions.push({
           type: 'add',
-          path: baseDir + '/{{kebabCase name}}/style.js',
+          path: baseDir + '/{{selectedComponentCase name}}/style.js',
           templateFile: 'plop-templates/component/style.hbs',
         })
       }
 
       actions.push({
         type: 'add',
-        path: baseDir + '/{{kebabCase name}}/test.jsx',
+        path: baseDir + '/{{selectedComponentCase name}}/test.jsx',
         templateFile: 'plop-templates/component/test.hbs',
+      })
+
+      actions.push({
+        type: 'add',
+        path: baseDir + '/{{selectedComponentCase name}}/index.js',
+        templateFile: 'plop-templates/component/index.hbs',
       })
 
       return actions
