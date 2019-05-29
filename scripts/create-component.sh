@@ -1,5 +1,21 @@
 #!/bin/sh
-PLOP_BIN="./node_modules/.bin/plop"
-PLOP_FILE="./node_modules/react-components-cli/plopfile.js"
+LODASH_DIR=`yarn global dir`/node_modules/lodash
+PLOP_DIR=`yarn global dir`/node_modules/plop
+REACT_COMPONENT_CLI=`yarn global dir`/node_modules/react-components-cli
 
-${PLOP_BIN} --plopfile ${PLOP_FILE} "$@"
+echo $LODASH_DIR
+echo $PLOP_DIR
+
+if [ ! -d $LODASH_DIR ]; then
+    echo "Installing lodash.."
+    yarn global add lodash
+fi
+
+if [ ! -d $PLOP_DIR ]; then
+    echo "Installing plop.."
+    yarn global add plop
+fi
+
+echo ${REACT_COMPONENT_CLI}/plopfile.js
+
+yarn plop --plopfile ${REACT_COMPONENT_CLI}/plopfile.js "$@"

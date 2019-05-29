@@ -12,9 +12,9 @@ Create components based on the following structure:
 - `src/components/new-component/style.js` (optional)
 
 ### Installation
-- `yarn add --dev react-components-cli`
+- `yarn global add react-components-cli`
 or
-- `npm -D i react-components-cli`
+- `npm -g install react-components-cli`
 
 ### Usage
 You can substitute `yarn` with `npm run`
