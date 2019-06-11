@@ -1,6 +1,5 @@
 #!/bin/sh
 LODASH_DIR=`yarn global dir`/node_modules/lodash
-PLOP_DIR=`yarn global dir`/node_modules/plop
 REACT_COMPONENT_CLI=`yarn global dir`/node_modules/react-components-cli
 
 echo $LODASH_DIR
@@ -18,4 +17,4 @@ fi
 
 echo ${REACT_COMPONENT_CLI}/plopfile.js
 
-yarn plop --plopfile ${REACT_COMPONENT_CLI}/plopfile.js "$@"
+plop --plopfile ${REACT_COMPONENT_CLI}/plopfile.js "$@"
