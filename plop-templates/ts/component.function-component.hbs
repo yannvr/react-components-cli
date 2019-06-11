@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { Styled{{name}} } from './style'
-import PropTypes from 'prop-types'
 
 export interface {{name}}Props {
 
@@ -10,7 +9,7 @@ export interface {{name}}State {
 
 }
 
-const {{name}}:React.FunctionComponent<Props, State> = () => {
+const {{name}}:FunctionComponent<{{name}}Props, {{name}}State> = () => {
 
     return (
       <Styled{{name}}>

@@ -61,7 +61,7 @@ module.exports = function(plop) {
       },
 
       {
-        type: 'typescript',
+        type: 'confirm',
         name: 'ts',
         message: 'Typescript?',
         default: false,
