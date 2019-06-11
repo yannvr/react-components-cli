@@ -20,7 +20,7 @@ or
 You can substitute `yarn` with `npm run`
 - Create any components type using prompts: 
     - `npm run create-component`
-    - `yarn run create-component`
+    - `yarn run create-component` (note: if global not found, add `yarn global dir` to your PATH)
 - Create styled components interactively using: 
     - `npm run create-component` 
     - `yarn run create-component`
