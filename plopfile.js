@@ -30,7 +30,7 @@ module.exports = function(plop) {
         name: 'componentType',
         message: 'Component type?',
         choices: [
-          { name: 'stateless', value: 'stateless', checked: true },
+          { name: 'function', value: 'function', checked: true },
           { name: 'class', value: 'class' },
           { name: 'pure', value: 'pure' },
         ],
@@ -60,6 +60,13 @@ module.exports = function(plop) {
         ],
       },
 
+      {
+        type: 'confirm',
+        name: 'ts',
+        message: 'Typescript?',
+        default: false,
+      },
+
     ],
 
     actions: function(data) {
@@ -67,6 +74,8 @@ module.exports = function(plop) {
 
       const targetDir = data['directory']
       const baseDir = cwd + '/' + targetDir
+      const templateFile = 'plop-templates/'.concat(data.ts ? 'ts' : 'js')
+      const fileExt = data.ts ? 'ts' : 'js'
 
       plop.setHelper('selectedComponentCase', function (text) {
         if (data.componentCase === 'kebab') {
@@ -79,23 +88,23 @@ module.exports = function(plop) {
         case 'class':
           actions.push({
             type: 'add',
-            path: baseDir + '/{{selectedComponentCase name}}/{{selectedComponentCase name}}.jsx',
-            templateFile: 'plop-templates/component/component.class-component.hbs',
+            path: baseDir + `/{{selectedComponentCase name}}/{{selectedComponentCase name}}.${fileExt}x`,
+            templateFile: `${templateFile}/component.class-component.hbs`,
           })
           break
         case 'pure':
           actions.push({
             type: 'add',
-            path: baseDir + '/{{selectedComponentCase name}}/{{selectedComponentCase name}}.jsx',
-            templateFile: 'plop-templates/component/component.pure-component.hbs',
+            path: baseDir + `/{{selectedComponentCase name}}/{{selectedComponentCase name}}.${fileExt}x`,
+            templateFile: `${templateFile}/component.pure-component.hbs`,
           })
           break
-        case 'stateless':
+        case 'function':
         default:
           actions.push({
             type: 'add',
-            path: baseDir + '/{{selectedComponentCase name}}/{{selectedComponentCase name}}.jsx',
-            templateFile: 'plop-templates/component/component.stateless-component.hbs',
+            path: baseDir + `/{{selectedComponentCase name}}/{{selectedComponentCase name}}.${fileExt}x`,
+            templateFile: `${templateFile}/component.function-component.hbs`,
           })
           break
       }
@@ -103,29 +112,29 @@ module.exports = function(plop) {
       if (data.story) {
         actions.push({
           type: 'add',
-          path: baseDir + '/{{selectedComponentCase name}}/story.js',
-          templateFile: 'plop-templates/component/story.hbs',
+          path: baseDir + `/{{selectedComponentCase name}}/story.${fileExt}`,
+          templateFile: `${templateFile}/story.hbs`,
         })
       }
 
       if (data.styled) {
         actions.push({
           type: 'add',
-          path: baseDir + '/{{selectedComponentCase name}}/style.js',
-          templateFile: 'plop-templates/component/style.hbs',
+          path: baseDir + `/{{selectedComponentCase name}}/style.${fileExt}`,
+          templateFile: `${templateFile}/style.hbs`,
         })
       }
 
       actions.push({
         type: 'add',
-        path: baseDir + '/{{selectedComponentCase name}}/test.jsx',
-        templateFile: 'plop-templates/component/test.hbs',
+        path: baseDir + `/{{selectedComponentCase name}}/test.${fileExt}x`,
+        templateFile: `${templateFile}/test.hbs`,
       })
 
       actions.push({
         type: 'add',
-        path: baseDir + '/{{selectedComponentCase name}}/index.js',
-        templateFile: 'plop-templates/component/index.hbs',
+        path: baseDir + `/{{selectedComponentCase name}}/index.${fileExt}`,
+        templateFile: `${templateFile}/index.hbs`,
       })
 
       return actions

@@ -3,9 +3,9 @@
 "Automate every single boring and repetitive tasks" -- DevOps Handbook
 
 Create a styled component with test (Jest ready) including optionals story and style
-component
+component. Supports Typescript.
 
-Create components based on the following structure:
+Create components based on the following structure (example given in js)
 - `src/components/new-component/index.jsx`
 - `src/components/new-component/test.jsx`
 - `src/components/new-component/story.js` (optional)
@@ -43,7 +43,6 @@ will create a function component `<FunctionComponent />` in `src/component/profi
 ![screen recording](http://g.recordit.co/XMuQeSSrgy.gif)
 
 ### TODO
-- Handle typescript
 - Cypress template
 
 Note: the template can generate unstyled component but you'll just have to remove styled component references.
