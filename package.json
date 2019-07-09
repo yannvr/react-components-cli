@@ -24,7 +24,7 @@
   "author": "Yann VR",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.12",
     "plop": "^2.3.0"
   }
 }
