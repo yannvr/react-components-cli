@@ -112,7 +112,7 @@ module.exports = function(plop) {
       if (data.story) {
         actions.push({
           type: 'add',
-          path: baseDir + `/{{selectedComponentCase name}}/{{ name }}.story.${fileExt}x`,
+          path: baseDir + `/{{selectedComponentCase name}}/{{ selectedComponentCase name }}.story.${fileExt}x`,
           templateFile: `${templateFile}/story.hbs`,
         })
       }
@@ -120,14 +120,14 @@ module.exports = function(plop) {
       if (data.styled) {
         actions.push({
           type: 'add',
-          path: baseDir + `/{{selectedComponentCase name}}/{{ name }}.style.${fileExt}`,
+          path: baseDir + `/{{selectedComponentCase name}}/{{ selectedComponentCase name }}.style.${fileExt}`,
           templateFile: `${templateFile}/style.hbs`,
         })
       }
 
       actions.push({
         type: 'add',
-        path: baseDir + `/{{selectedComponentCase name}}/{{ name }}.test.${fileExt}x`,
+        path: baseDir + `/{{selectedComponentCase name}}/{{ selectedComponentCase name }}.test.${fileExt}x`,
         templateFile: `${templateFile}/test.hbs`,
       })
 
