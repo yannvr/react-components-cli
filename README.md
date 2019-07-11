@@ -13,31 +13,14 @@ Create components based on the following structure (example given in js)
 
 ### Installation
 - `yarn global add react-components-cli`
-or
-- `npm -g install react-components-cli`
 
 ### Usage
-You can substitute `yarn` with `npm run`
+You can substitute `yarn`
 - Create any components type using prompts: 
-    - `npm run create-component`
     - `yarn run create-component` (note: if global not found, add `yarn global dir` to your PATH)
-- Create styled components interactively using: 
-    - `npm run create-component` 
-    - `yarn run create-component`
-- Or without any prompt: 
-    ```
-        npx create-component -- 
-        --name <ComponentName> 
-        --componentType (stateless|class|pure) 
-        --componentCase (camel|kebab)
-        --directory <targetDir> 
-        --story <Boolean>
-        --syled <Boolean>
-    ```
-    
 ### Examples
 
-- `npx create-component -- --name FunctionComponent  --directory src/components --componentType stateless --styled true --story false --componentCase camel` 
+- `yarn run create-component -- --name FunctionComponent  --directory src/components --componentType stateless --styled true --story false --componentCase camel` 
 will create a function component `<FunctionComponent />` in `src/component/profile` including test and story files
 
 ![screen recording](http://g.recordit.co/XMuQeSSrgy.gif)

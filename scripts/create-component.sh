@@ -1,6 +1,9 @@
 #!/bin/sh
-LODASH_DIR=`npm root`/lodash
-REACT_COMPONENT_CLI=`npm root`/react-components-cli
+
+# YARN ONLY!!
+LODASH_DIR=`yarn global dir`/node_modules/lodash
+PLOP_DIR=`yarn global dir`/node_modules/plop
+REACT_COMPONENT_CLI=`yarn global dir`/node_modules/react-components-cli
 
 if [ ! -d $LODASH_DIR ]; then
     echo "Installing lodash.."
