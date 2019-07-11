@@ -1,14 +1,10 @@
 import React from 'react'
 import 'jest-styled-components'
 import renderer from 'react-test-renderer'
-import JssProvider from 'react-jss/lib/JssProvider'
 import {{ name }} from './index'
 
-// Avoids inconsistent class names between snapshots
-const generateClassName = (rule, styleSheet) => `${styleSheet.options.classNamePrefix}-${rule.key}`
-
 describe('<{{name}} />', () => {
-  let props
+  const props
 
   beforeEach(() => {
     props = {
@@ -16,11 +12,7 @@ describe('<{{name}} />', () => {
   })
 
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <JssProvider generateClassName={generateClassName}>
-        <{{name}} {...props} />
-      </JssProvider>
-    ).toJSON()
+    const tree = renderer.create(<{{name}} {...props} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })
