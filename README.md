@@ -15,7 +15,6 @@ Create components based on the following structure (example given in js)
 - `yarn global add react-components-cli`
 
 ### Usage
-You can substitute `yarn`
 - Create any components type using prompts: 
     - `yarn run create-component` (note: if global not found, add `yarn global dir` to your PATH)
 ### Examples
