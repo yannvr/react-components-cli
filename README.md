@@ -14,12 +14,14 @@ Create components based on the following structure (example given in js)
 ### Installation
 - `yarn global add react-components-cli`
 
+Note: You will need to add yarn global bin to your path like adding `export PATH="$(yarn global bin):$PATH"` in your .bashrc or .zshrc (or whatever on windows)
+
 ### Usage
 - Create any components type using prompts: 
-    - `yarn run create-component` (note: if global not found, add `yarn global dir` to your PATH)
+    - `create-component` (note: if global not found, add `yarn global dir` to your PATH)
 ### Examples
 
-- `yarn run create-component -- --name FunctionComponent  --directory src/components --componentType stateless --styled true --story false --componentCase camel` 
+- `create-component -- --name FunctionComponent  --directory src/components --componentType stateless --styled true --story false --componentCase camel` 
 will create a function component `<FunctionComponent />` in `src/component/profile` including test and story files
 
 ![screen recording](http://g.recordit.co/XMuQeSSrgy.gif)
