@@ -1,23 +1,17 @@
-import React from 'react'
-import { withKnobs, select, boolean, number, text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
-import {{name}} from './'
+import React from 'react';
+import {{name}} from './';
 
-const baseProps = {
+export default {
+  title: '{{name}}',
+  component: {{name}},
+};
 
-}
+const Template = (args) => {
+  return <{{name}} {...args} />;
+};
 
-const stories = storiesOf('{{name}}', module)
+export const Main = Template.bind({});
 
-// stories.addDecorator(withKnobs)
-
-stories.add('basic', () => <{{name}} {...baseProps} />)
-
-/*stories.add('dynamic props', () => (
-<{{name}}
-{...baseProps}
-editMode={boolean('editMode', false)}
-borderSize={number('borderSize', 1)}
-width={text('width', '')}
-/>
-))*/
+Main.args = {
+ // add default prop values here
+};

@@ -112,7 +112,7 @@ module.exports = function(plop) {
       if (data.story) {
         actions.push({
           type: 'add',
-          path: baseDir + `/{{selectedComponentCase name}}/{{ selectedComponentCase name }}.story.${fileExt}x`,
+          path: baseDir + `/{{selectedComponentCase name}}/{{ selectedComponentCase name }}.stories.${fileExt}x`,
           templateFile: `${templateFile}/story.hbs`,
         })
       }
